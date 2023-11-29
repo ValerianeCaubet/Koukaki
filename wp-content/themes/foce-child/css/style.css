@@ -1,1 +1,153 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-section {
+  opacity: 0;
+  animation: fadeInSlide 1s ease-in-out forwards;
+}
+
+.fade-in-section-top {
+  animation: fadeInSlide 1s ease-in-out forwards, slideInTop 1s ease-in-out forwards;
+}
+
+.fade-in-section-bottom {
+  animation: fadeInSlide 1s ease-in-out forwards, slideInBottom 1s ease-in-out forwards;
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes rotating {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.story h2::after,
+.fleur {
+  animation: rotating 20s normal linear infinite;
+}
+
+.fade-in-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in-title .word1 {
+  transition-delay: 0s;
+}
+
+.fade-in-title .word2 {
+  transition-delay: 0.3s;
+}
+
+.fade-in-title.is-visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-oscar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.section-oscar .title-oscar {
+  font-family: "Quicksand", "sans-serif";
+  font-weight: 700;
+  font-size: 42px;
+  text-align: left;
+  color: #fff5e9;
+  background-image: url("../assets/images/background-oscar.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1.5em 2.2em;
+  margin-top: 40px;
+}
+.section-oscar .img-oscar {
+  width: 278px;
+  height: 129px;
+}
+
+#masthead {
+  position: relative;
+}
+#masthead .header-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Déplacez cette ligne ici pour inclure la classe .parallax */
+}
+#masthead .header-content video,
+#masthead .header-content img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+#masthead .header-content video {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#masthead .header-content #header-logo {
+  position: absolute;
+  width: 680.7px;
+  height: 479.04px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+#masthead .header-content #header-logo.logo-animation {
+  animation: floatAnimation 3s infinite;
+}
+@media (max-width: 767px) {
+  #masthead .header-content video {
+    display: none;
+  }
+  #masthead .header-content img {
+    display: block;
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-25px);
+  }
+}/*# sourceMappingURL=style.css.map */
