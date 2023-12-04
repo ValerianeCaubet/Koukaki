@@ -1,27 +1,31 @@
-<div id="section-perso">
-    <h3>Les personnages</h3>
-    <div class="slider-perso">
-        <div class="card-perso">
-            <div>
-                <img src="<?php echo get_stylesheet_directory_uri() . './assets/personnages/Kawaneko.png'; ?>" alt="Chat bleu">
+<div class="slider-perso">
+    <h3 class="fade-in-title title-left">
+        <span class="word1">Les</span>
+        <span class="word2">personnages</span>
+    </h3>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/personnages/Kawaneko.png'; ?>" alt="Chat bleu">
                 <p>Kawaneko</p>
             </div>
-            <div>
-                <img src="<?php echo get_stylesheet_directory_uri() . './assets/personnages/Orenjiiro.png'; ?>" alt="Chat orange">
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/personnages/Orenjiiro.png'; ?>" alt="Chat orange">
                 <p>Orenjiro</p>
             </div>
-            <div>
-                <img src="<?php echo get_stylesheet_directory_uri() . './assets/personnages/Pinku.png'; ?>" alt="Chat blanc">
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/personnages/Pinku.png'; ?>" alt="Chat blanc">
                 <p>Pinku</p>
             </div>
-            <div>
-                <img src="<?php echo get_stylesheet_directory_uri() . './assets/personnages/Tenshi.png'; ?>" alt="Chat jaune">
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/personnages/Tenshi.png'; ?>" alt="Chat jaune">
                 <p>Tenshi</p>
             </div>
-            <div>
-                <img src="<?php echo get_stylesheet_directory_uri() . './assets/personnages/Jaakuna.png'; ?>" alt="Chat noir">
+            <div class="swiper-slide">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/personnages/Jaakuna.png'; ?>" alt="Chat noir">
                 <p>Jaakuna</p>
             </div>
         </div>
     </div>
 </div>
+

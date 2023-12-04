@@ -27,28 +27,30 @@
 
 	<header id="masthead" class="site-header">
   
-		<nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+		<nav class="main-navigation">
+             
+                <button class="menu-burger">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
-            </button>
-            <ul>
-                <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
-            </ul>
+                </button>
+                <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                <ul class="nav-menu"> 
+                    <li class="nav-item"><a href="#place">Lieu</a></li>
+                    <li class="nav-item"><a href="#studio">Studio Koukaki</a></li>
+                    <li class="nav-item"><a href="#story">Histoire</a></li>
+                    <li class="nav-item"><a href="#characters">Personnages</a></li>
+                </ul>
 
+                
         <!-- Ajout de la video et de l'image fallback --> 
 
         <div class="header-content fade-in-section fade-in-section-top">
-    <video id="header-video" autoplay muted loop playsinline>
-        <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/header-video.mp4" type="video/mp4">
-    </video>
-    <img id="header-logo" class="logo-animation" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-parallax.png" alt="Logo">
-</div>
+            <video id="header-video" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri() . '/assets/images/image-fallback-header.png'; ?>">
+                <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/header-video.mp4" type="video/mp4">
+            </video>
+            <img id="header-logo" class="logo-animation" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-parallax.png" alt="Logo">
+        </div>
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
