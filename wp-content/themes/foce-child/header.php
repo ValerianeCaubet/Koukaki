@@ -27,30 +27,35 @@
 
 	<header id="masthead" class="site-header">
   
-		<nav class="main-navigation">
-             
-                <button class="menu-burger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-                </button>
-                <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                <ul class="nav-menu"> 
-                    <li class="nav-item"><a href="#place">Lieu</a></li>
-                    <li class="nav-item"><a href="#studio">Studio Koukaki</a></li>
-                    <li class="nav-item"><a href="#story">Histoire</a></li>
-                    <li class="nav-item"><a href="#characters">Personnages</a></li>
-                </ul>
+    <nav id="site-navigation" class="main-navigation">
+            <div class="boutonMenu">
+				<span> </span>
+	        </div>
+	        <ul>
+		    	<li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+	        </ul>
+	    </nav><!-- #site-navigation -->
 
-                
-        <!-- Ajout de la video et de l'image fallback --> 
 
-        <div class="header-content fade-in-section fade-in-section-top">
-            <video id="header-video" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri() . '/assets/images/image-fallback-header.png'; ?>">
-                <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/header-video.mp4" type="video/mp4">
-            </video>
-            <img id="header-logo" class="logo-animation" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-parallax.png" alt="Logo">
-        </div>
+                <section class="menu-items MenuFull">
+        	<div class="menu-items__container">
+          		<img class="logoMenu"         src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/logomenu.png'; ?>" alt="logo menu">		      
+          		<img id="catMenuBleu"         src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/bluecat.png'; ?>" alt="Chat bleu">
+			    <img id="catMenuBlack"        src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/blackcat.png'; ?>" alt="Chat noir">
+			    <img id="catMenuOrange"       src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/orangecat.png'; ?>" alt="Chat orange">
+			    <img id="fleurMenuSunFlower"  src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/whiteflower.png'; ?>" alt="Fleur blanche">
+			    <img id="fleurMenuOrchid"     src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/purpleflower.png'; ?>" alt="Orchidée violette">
+			    <img id="fleurMenuHibiscus"   src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/orangeflower.png'; ?>" alt="Hibiscus orange">
+			    <img id="fleurMenuRandom"     src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/pinkflower.png'; ?>" alt="fleur rose">
+			    <img id="fleurMenuFlower"     src="<?php echo get_stylesheet_directory_uri() . '/assets/menuburger/flowers.png'; ?>" alt="Petite fleurs">
+			    <ul class="liste">
+					<li><a href="#story"><span class="Animetitre2">Histoire</span></a></li>
+					<li><a href="#characters"><span class="Animetitre2">Personnages</span></a></li>
+					<li><a href="#place"><span class="Animetitre2">Lieu</span></a></li>
+					<li><a href="#studio"><span class="Animetitre2">Studio Koukaki</span></a></li>
+			    </ul>
+				<p class="menuParagraphe">STUDIO KOUKAKI</p>
+			</div>
+		</section>
 
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

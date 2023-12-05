@@ -16,5 +16,3 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Effet de parallax sur logo au scroll 
-
-

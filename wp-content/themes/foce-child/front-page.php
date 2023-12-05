@@ -4,9 +4,18 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-        <section class="banner fade-in-section fade-in-section-top">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.png' ); ?>" alt="logo Fleurs d'oranger & chats errants">
+        <section class="banner fade-in-section fade-in-section-top ">
+               <!-- Ajout de la video et de l'image fallback --> 
+
+        <div class="header-content fade-in-section fade-in-section-top">
+            <video id="header-video" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri() . './assets/images/banner.png'; ?>">
+                <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/header-video.mp4" type="video/mp4">
+            </video>
+            <img id="header-logo" class="logo-animation parralax" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo-parallax.png" alt="Logo">
+        </div>
         </section>
+
+
         <section id="story" class="story fade-in-section fade-in-section-bottom">
             <h2 class="fade-in-title">
                 <span class="word1">L'</span>
