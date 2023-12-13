@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes fadeInSlide {
   from {
     opacity: 0;
@@ -147,19 +148,22 @@
 .banner.fade-in-section.fade-in-section-top #masthead {
   position: relative;
 }
-.banner.fade-in-section.fade-in-section-top #masthead .header-content {
+.banner.fade-in-section.fade-in-section-top #masthead .banner {
+  background-image: none;
+}
+.banner.fade-in-section.fade-in-section-top #masthead .banner .header-content {
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
 }
-.banner.fade-in-section.fade-in-section-top #masthead .header-content video {
+.banner.fade-in-section.fade-in-section-top #masthead .banner .header-content video {
   width: 100%;
   height: 100%;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.banner.fade-in-section.fade-in-section-top #masthead .header-content #header-logo {
+.banner.fade-in-section.fade-in-section-top #masthead .banner .header-content #header-logo {
   position: absolute;
   width: 680.7px;
   height: 479.04px;
@@ -168,26 +172,48 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-.banner.fade-in-section.fade-in-section-top #masthead .header-content #header-logo.logo-animation {
+.banner.fade-in-section.fade-in-section-top #masthead .banner .header-content #header-logo.logo-animation {
   animation: floatAnimation 3s infinite;
 }
 @media (max-width: 767px) {
-  .banner.fade-in-section.fade-in-section-top #masthead .header-content video {
+  .banner.fade-in-section.fade-in-section-top #masthead .banner .header-content video {
     display: none;
   }
-  .banner.fade-in-section.fade-in-section-top #masthead .header-content img {
+  .banner.fade-in-section.fade-in-section-top #masthead .banner .header-content img {
     display: block;
   }
 }
 @keyframes floatAnimation {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0);
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(20px, 33px);
   }
   50% {
-    transform: translate(-50%, -50%) translateY(-30px);
+    transform: translate(0, 0);
+  }
+  66% {
+    transform: translate(34px, -25px);
   }
 }
 
+.banner img {
+  width: 100%;
+  margin-top: 0;
+}
+
+.banner .parralax {
+  width: 50%;
+  margin-top: -10%;
+}
+
+@media screen and (max-width: 700px) {
+  .banner .parralax {
+    width: 70%;
+    margin-top: -50%;
+  }
+}
 .slider-perso {
   padding-left: 100px;
   padding-top: 50px;
@@ -238,6 +264,7 @@
 }
 .main-navigation {
   height: 80px;
+  width: 100%;
 }
 
 .main-navigation ul {
@@ -255,7 +282,7 @@
 }
 .MenuFull.nav_open {
   opacity: 1;
-  height: 100vh;
+  height: 100%;
   visibility: visible;
   display: block;
   transition: opacity 0.5s ease-in, height 0.5s ease-in;
@@ -361,6 +388,7 @@
   width: 200px;
 }
 
+/* Cat styles */
 #catMenuBleu {
   top: 260px;
   left: 280px;
@@ -382,6 +410,7 @@
   height: 84px;
 }
 
+/* Flower styles */
 #fleurMenuSunFlower {
   top: 215px;
   right: 210px;
@@ -411,12 +440,20 @@
   height: 80px;
 }
 
+/* Cat float animation */
 #catMenuBlack,
 #catMenuOrange,
 #catMenuBleu {
   animation: floatAnimation 8s infinite alternate;
 }
 
+/* Flower rotation animation */
+#fleurMenuFlower,
+#fleurMenuSunFlower {
+  animation: rotating 20s normal linear infinite;
+}
+
+/* Media queries for images */
 @media (min-width: 700px) and (max-width: 1000px) {
   #catMenuBleu {
     left: 10%;
@@ -468,10 +505,29 @@
   #fleurMenuSunFlower {
     display: none;
   }
-  ul, ol {
+  ul,
+  ol {
     margin: 0 0 1.5em -4em;
   }
   .menuParagraphe {
     margin-left: -10px;
   }
+}
+.story #place {
+  position: relative;
+  background-image: url("../assets/images/nuages-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden; /* Empêche les nuages de dépasser lorsqu'ils se déplacent */
+}
+
+#NuagesBleu {
+  max-height: 300px;
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  right: 0px; /* Position de départ des nuages */
+  height: auto;
+  transition: transform 0.5s ease-out;
 }/*# sourceMappingURL=style.css.map */

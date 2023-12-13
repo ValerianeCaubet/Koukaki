@@ -24,7 +24,11 @@ function theme_enqueue_styles() {
 
     // Enqueue menu burger script
     wp_enqueue_script('Burger-script', get_stylesheet_directory_uri() . '/js/menuburger.js', array('jquery'), '1.0.0', true);
+
+    // Enqueue Animation nuages script 
+    wp_enqueue_script('nuage', get_stylesheet_directory_uri() . '/js/nuages.js');
 }
+
 
 // Get customizer options form parent theme
 if ( get_stylesheet() !== get_template() ) {

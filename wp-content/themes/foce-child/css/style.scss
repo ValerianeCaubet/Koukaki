@@ -159,11 +159,15 @@
     padding-bottom: 0;
   }
 }
+
+// Ajout de la vidéo et du logo dans le header
   
 .banner.fade-in-section.fade-in-section-top {
-  // Ajout de la vidéo et du logo dans le header
   #masthead {
     position: relative;
+
+    .banner {
+      background-image: none;  // désactive l'image qui est appelée dans la classe banner du thème parent
 
     .header-content {
       max-width: 1440px;
@@ -203,16 +207,34 @@
       }
     }
   }
+  }
+
 
   // Mise en place de l'animation de flottement sur le logo
   @keyframes floatAnimation {
-    0%, 100% {
-      transform: translate(-50%, -50%) translateY(0);
+    0% { transform: translate(0, 0); }
+    33% { transform: translate(20px, 33px); }
+    50% { transform: translate(0, 0); }
+    66% { transform: translate(34px, -25px); }
+}
+}
+
+//CSS du parallax 
+.banner img {
+    width: 100%;
+    margin-top: 0;
+}
+
+.banner .parralax {
+    width: 50%;
+    margin-top: -10%;
+}
+
+@media screen and (max-width:700px) {
+    .banner .parralax {
+        width: 70%;
+        margin-top: -50%;
     }
-    50% {
-      transform: translate(-50%, -50%) translateY(-30px);
-    }
-  }
 }
 
 // Style du Slider de la section Les personnages 
@@ -225,12 +247,14 @@
   width: 100%;
   max-width: 100%;
 }
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
   margin-right: 40px;
   margin-left: 40px;
 }
+
 .swiper-slide img {
   display: block;
   max-width: 400px;
@@ -271,6 +295,7 @@
 
 .main-navigation {
 	height: 80px;
+  width: 100%;
 } 
 
 .main-navigation ul {
@@ -288,7 +313,7 @@
 
  &.nav_open {
     opacity: 1;
-    height: 100vh;
+    height: 100%;
     visibility: visible;
     display: block;
     transition: opacity 0.5s ease-in, height 0.5s ease-in;
@@ -410,130 +435,160 @@
     width: 200px;
     }
 
-  #catMenuBleu {
-    top: 260px;
-    left: 280px;
-    width: 120px;
-    height: 105px;
-  }
-
-  #catMenuBlack {
-    top: 480px;
-    right: 210px;
-    width: 120px;
-    height: 105px;
-  }
-
-  #catMenuOrange {
-    top: 700px;
-    left: 80px;
-    width: 93px;
-    height: 84px;
-  }
-
-  #fleurMenuSunFlower{
-    top: 215px;
-    right: 210px;
-  }
-
-   #fleurMenuOrchid{
-    top: 117px;
-    left: -54px;
-  }
-
-  #fleurMenuHibiscus{
-    top: 640px;
-    right: -240px;
-    width: 30%;
-  }
-
-  #fleurMenuRandom{
-    top: 400px;
-    right: -80px;
-    width: 5%;
-  }
-
-  #fleurMenuFlower {
-    top: 480px;
-    left: 230px;
-    width: 80px;
-    height: 80px;
-  }
-
-// Animation Flottement des chats
-#catMenuBlack,
-#catMenuOrange,
+ /* Cat styles */
 #catMenuBleu {
-	animation: floatAnimation 8s infinite alternate;
-  }
-
-// media querie images
-
-@media (min-width: 700px) and (max-width: 1000px) {
-	#catMenuBleu {
-		left: 10%;
-	}
-	#fleurMenuSunFlower {
-		right: 5%;
-	}
-	
-	#catMenuBlack {
-		right: 10%;
-	}
-	#fleurMenuFlower {
-		left: 5%
-	}
-}
-
-@media (max-width: 700px) {
-#catMenuOrange {
-    left: 0;
-}
-
-.main-navigation a {
-	font-size: 14px;
-}
-
-.main-navigation ul {
-	justify-content: flex-start;
-}
-
-.banner {
-	min-height: 100vh;
-}
-
-.banner .backgroundBanner {
-    position: absolute;
-    width: 100% !important;
-	height: 100%;
-	top: 0;
-	object-fit: cover;
-}
-
-#catMenuBleu {
-    display: none;
+  top: 260px;
+  left: 280px;
+  width: 120px;
+  height: 105px;
 }
 
 #catMenuBlack {
-    top: 440px;
-    right: 0;
-}
-#fleurMenuFlower {
-    left: 5%
-}
-
-.liste li a {
-	font-size: 4.5vw;
+  top: 480px;
+  right: 210px;
+  width: 120px;
+  height: 105px;
 }
 
+#catMenuOrange {
+  top: 700px;
+  left: 80px;
+  width: 93px;
+  height: 84px;
+}
+
+/* Flower styles */
 #fleurMenuSunFlower {
-	display: none;
-}
-ul, ol {
-    margin: 0 0 1.5em -4em;
+  top: 215px;
+  right: 210px;
 }
 
-.menuParagraphe {
-	margin-left: -10px;
+#fleurMenuOrchid {
+  top: 117px;
+  left: -54px;
 }
+
+#fleurMenuHibiscus {
+  top: 640px;
+  right: -240px;
+  width: 30%;
 }
+
+#fleurMenuRandom {
+  top: 400px;
+  right: -80px;
+  width: 5%;
+}
+
+#fleurMenuFlower {
+  top: 480px;
+  left: 230px;
+  width: 80px;
+  height: 80px;
+}
+
+/* Cat float animation */
+#catMenuBlack,
+#catMenuOrange,
+#catMenuBleu {
+  animation: floatAnimation 8s infinite alternate;
+}
+
+/* Flower rotation animation */
+#fleurMenuFlower,
+#fleurMenuSunFlower  {
+  animation: rotating 20s normal linear infinite;
+}
+
+/* Media queries for images */
+@media (min-width: 700px) and (max-width: 1000px) {
+  #catMenuBleu {
+      left: 10%;
+  }
+  #fleurMenuSunFlower {
+      right: 5%;
+  }
+  #catMenuBlack {
+      right: 10%;
+  }
+  #fleurMenuFlower {
+      left: 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  #catMenuOrange {
+      left: 0;
+  }
+
+  .main-navigation a {
+      font-size: 14px;
+  }
+
+  .main-navigation ul {
+      justify-content: flex-start;
+  }
+
+  .banner {
+      min-height: 100vh;
+  }
+
+  .banner .backgroundBanner {
+      position: absolute;
+      width: 100% !important;
+      height: 100%;
+      top: 0;
+      object-fit: cover;
+  }
+
+  #catMenuBleu {
+      display: none;
+  }
+
+  #catMenuBlack {
+      top: 440px;
+      right: 0;
+  }
+
+  #fleurMenuFlower {
+      left: 5%;
+  }
+
+  .liste li a {
+      font-size: 4.5vw;
+  }
+
+  #fleurMenuSunFlower {
+      display: none;
+  }
+
+  ul,
+  ol {
+      margin: 0 0 1.5em -4em;
+  }
+
+  .menuParagraphe {
+      margin-left: -10px;
+  }
+}
+
+// Animation des nuages 
+
+.story #place {
+  position: relative;
+  background-image: url('../assets/images/nuages-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden; /* Empêche les nuages de dépasser lorsqu'ils se déplacent */
+}
+
+#NuagesBleu {
+  max-height: 300px;
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  right: 0px; /* Position de départ des nuages */
+  height: auto;
+  transition: transform 0.5s ease-out;
+} 
