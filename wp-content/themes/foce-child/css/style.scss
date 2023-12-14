@@ -1,4 +1,4 @@
-// Ajout de l'effet fade-in sur la page principale 
+//////////////// Ajout de l'effet fade-in sur la page principale 
 @keyframes fadeInSlide {
   from {
       opacity: 0;
@@ -15,7 +15,7 @@
   animation: fadeInSlide 1s ease-in-out forwards;
 }
 
-// Ajout des effets de glissements aux differentes sections 
+//////////// Ajout des effets de glissements aux differentes sections 
 .fade-in-section-top {
   animation: fadeInSlide 1s ease-in-out forwards, slideInTop 1s ease-in-out forwards;
 }
@@ -47,7 +47,7 @@
 }
 
 
- //Ajout de l'effet de rotation continu des fleurs 
+ ////////////Ajout de l'effet de rotation continu des fleurs 
  @keyframes rotating {
     100% {
       transform: rotate(1turn);
@@ -64,7 +64,7 @@
     animation: rotating 20s normal linear infinite;
   } 
 
-// Ajout de l'effet fade in sur mes titres 
+///////////// Ajout de l'effet fade in sur mes titres 
 .fade-in-title span {
   display: inline-block;
   opacity: 0;
@@ -85,7 +85,7 @@
   transform: translateY(0);
 }
 
-// Style de la nouvelle section des oscars 
+//////////// Style de la nouvelle section des oscars 
 
 .nomination_container {
   padding-top: 80px;
@@ -160,84 +160,115 @@
   }
 }
 
-// Ajout de la vidéo et du logo dans le header
+/////////// Ajout de la vidéo et du logo dans le header
   
-.banner.fade-in-section.fade-in-section-top {
-  #masthead {
-    position: relative;
+    // CSS de la banniére
 
-    .banner {
-      background-image: none;  // désactive l'image qui est appelée dans la classe banner du thème parent
-
-    .header-content {
-      max-width: 1440px;
-      margin: 0 auto;
-      position: relative;
-
-      video {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-      }
-
-      #header-logo {
-        position: absolute;
-        width: 680.7px;
-        height: 479.04px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-
-        &.logo-animation {
-          animation: floatAnimation 3s infinite;
-        }
-      }
-
-      // Affiche l'image fallback pour mobile
-      @media (max-width: 767px) {
-        video {
-          display: none;
-        }
-
-        img {
-          display: block;
-        }
-      }
-    }
-  }
-  }
-
-
-  // Mise en place de l'animation de flottement sur le logo
-  @keyframes floatAnimation {
-    0% { transform: translate(0, 0); }
-    33% { transform: translate(20px, 33px); }
-    50% { transform: translate(0, 0); }
-    66% { transform: translate(34px, -25px); }
-}
-}
-
-//CSS du parallax 
 .banner img {
+	margin-top: unset;
+}
+
+.banner {
+    background-image: none;  // désactive l'image qui est appelée dans la classe banner du thème parent
+
+    .backgroundBanner {
+        position: absolute;
+        width: 100% !important;
+        z-index: -2;
+        margin-top: 0px !important;
+    }
+
+    .logoContainer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+  }
+  
+  .logoBanner {
+      width: 680.7px;
+      height: 479.04px;
+      animation: floatAnimation 3s infinite;
+      transform: translateY(0); //Réinitialise la translation Y pour éviter le décalage initial 
+  }
+  
+    
+    .videoBanner {
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .videoBanner {
+        display: none;
+    }
+    
+    .backgroundBanner img {
+        margin-bottom: 430px;
+    }
+    
+    .backgroundBanner {
+        margin-bottom: 430px;
+        width: 100%; 
+        height: auto;
+    }
+
+    .boutonMenu {
+        position: absolute; 
+        right: -100px; 
+        z-index: 10; 
+    }
+
+    .story #place > div p {
+        padding-left: 0.5em;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    #oscar::after {
+        right: -30px;
+    }
+
+    #oscar::before, #oscar::after {
+        width: 100px;
+        height: 100px;
+    } 
+}
+
+  /////// Mise en place de l'animation de flottement sur le logo
+  @keyframes floatAnimation {
+    0% { transform: translate(2px, 2px); }
+    25% { transform: translate(3px, -2px); }
+    50% { transform: translate(1px, 3px); }
+    75% { transform: translate(-2px, 1px); }
+    100% { transform: translate(2px, 2px); }
+}
+
+
+
+///////// CSS du  parallax 
+
+.banner {
+  img {
     width: 100%;
     margin-top: 0;
-}
+  }
 
-.banner .parralax {
+  .parallax {
     width: 50%;
     margin-top: -10%;
-}
 
-@media screen and (max-width:700px) {
-    .banner .parralax {
-        width: 70%;
-        margin-top: -50%;
+    @media screen and (max-width: 700px) {
+      width: 70%;
+      margin-top: -50%;
     }
+  }
 }
 
-// Style du Slider de la section Les personnages 
+///////////// Style du Slider de la section Les personnages 
 
 .slider-perso {
   padding-left: 100px;
@@ -291,34 +322,35 @@
   }
 }
 
-// CSS du menu-Burger
+/////////// CSS du menu-Burger
 
 .main-navigation {
 	height: 80px;
-  width: 100%;
-} 
+}
 
 .main-navigation ul {
     display: flex;
 }
 
-.main-navigation ul .site-title {
+.site-title {
 	display: flex;
+  margin-left: 90px;
 }
 
 .MenuFull {
-    background-color: #FFF5E9;
-    opacity: 0;
-    transition: opacity 0.5s ease-in, height 0.5s ease-in;
+  background-color: #FFF5E9;
+  opacity: 0;
+  transition: opacity 0.5s ease-in, height 0.5s ease-in;
+  overflow: hidden !important;
 
- &.nav_open {
-    opacity: 1;
-    height: 100%;
-    visibility: visible;
-    display: block;
-    transition: opacity 0.5s ease-in, height 0.5s ease-in;
-    width: 100%;
-    overflow: hidden;
+&.nav_open {
+  opacity: 1;
+  height: 100vh;
+  visibility: visible;
+  display: block;
+  transition: opacity 0.5s ease-in, height 0.5s ease-in;
+  max-width: 1440px;
+  overflow: hidden !important;
   }
 }
 
@@ -380,18 +412,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 70px;
+    row-gap: 15px;
   }
 }
 
 .liste {
 	    ul {
 	        text-align: center;
-	        height: 57%;
 	    }
 
 	    li {
 	        text-align: center;
+          margin-right: 100px !important;
           	list-style-type: none;
 	    }
 
@@ -415,11 +447,10 @@
 	}
 
 .menuParagraphe {
-  margin-left: 80px;
   text-align: center;
 }
 
-// Images dans le menu-Burger
+//////// Eléments dans le menu-Burger
 	#catMenuBleu,
 	#catMenuBlack,
 	#catMenuOrange,
@@ -433,9 +464,10 @@
 
   .logoMenu {
     width: 200px;
+    margin: auto;
     }
 
- /* Cat styles */
+ ////// Les cats 
 #catMenuBleu {
   top: 260px;
   left: 280px;
@@ -451,13 +483,13 @@
 }
 
 #catMenuOrange {
-  top: 700px;
+  top: 600px;
   left: 80px;
   width: 93px;
   height: 84px;
 }
 
-/* Flower styles */
+////// Les flowers
 #fleurMenuSunFlower {
   top: 215px;
   right: 210px;
@@ -465,19 +497,19 @@
 
 #fleurMenuOrchid {
   top: 117px;
-  left: -54px;
+  left: -70px;
 }
 
 #fleurMenuHibiscus {
-  top: 640px;
-  right: -240px;
+  top: 540px;
+  margin-left: 1450px;
   width: 30%;
 }
 
 #fleurMenuRandom {
-  top: 400px;
-  right: -80px;
-  width: 5%;
+  top: 300px;
+  margin-left: 1400px;
+  width: 7%;
 }
 
 #fleurMenuFlower {
@@ -487,20 +519,20 @@
   height: 80px;
 }
 
-/* Cat float animation */
+//////// FloatCat
 #catMenuBlack,
 #catMenuOrange,
 #catMenuBleu {
   animation: floatAnimation 8s infinite alternate;
 }
 
-/* Flower rotation animation */
+////// RotationFlowers
 #fleurMenuFlower,
-#fleurMenuSunFlower  {
+#fleurMenuSunFlower, #fleurMenuHibiscus, #fleurMenuRandom, #fleurMenuOrchid  {
   animation: rotating 20s normal linear infinite;
 }
 
-/* Media queries for images */
+/////// media queries
 @media (min-width: 700px) and (max-width: 1000px) {
   #catMenuBleu {
       left: 10%;
@@ -572,7 +604,7 @@
   }
 }
 
-// Animation des nuages 
+/////// Animation des nuages 
 
 .story #place {
   position: relative;
@@ -580,7 +612,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden; /* Empêche les nuages de dépasser lorsqu'ils se déplacent */
+  overflow: hidden; ////Empêche les nuages de dépasser lorsqu'ils se déplacent 
 }
 
 #NuagesBleu {
@@ -588,7 +620,7 @@
   filter: blur(10px);
   position: absolute;
   top: 0;
-  right: 0px; /* Position de départ des nuages */
+  right: 0px; ///// Position de départ des nuages 
   height: auto;
   transition: transform 0.5s ease-out;
 } 

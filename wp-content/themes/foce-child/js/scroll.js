@@ -15,14 +15,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Effet de parallax sur logo au scroll 
-// parallaxe
+
+//Parallax du logo au scroll 
 window.addEventListener('scroll', function() {
-    const parallaxImage = document.querySelector('.parralax');
+    const parallaxContainer = document.querySelector('.logoContainer');
     const scrollPosition = window.scrollY;
 
-    // Ajustez la valeur 0.25 selon l'effet de parallaxe souhaité.
-    // Une valeur plus élevée accélérera l'effet de parallaxe, une valeur plus faible le ralentira.
-    const parallaxValue = scrollPosition * 0.25;
-    parallaxImage.style.transform = 'translateY(' + parallaxValue + 'px)';
+    // Vitesse de défilement au scroll
+    let parallaxValue = scrollPosition * 0.25;
+
+    // Limite de la valeur pour le dépassement banner
+    const maxParallaxValue = 165;
+    parallaxValue = Math.min(parallaxValue, maxParallaxValue);
+
+    // transformation css
+    parallaxContainer.style.transform = 'translate(-50%, -50%) translateY(' + parallaxValue + 'px)';
 });

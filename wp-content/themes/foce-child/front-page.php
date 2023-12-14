@@ -7,10 +7,13 @@ get_header();
         <section class="banner fade-in-section fade-in-section-top ">
                <!-- Ajout de la video et de l'image fallback --> 
                <div class="header-content fade-in-section fade-in-section-top">
-            <video id="header-video" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri() . './assets/images/banner.png'; ?>">
+               <img class="backgroundBanner" src="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="Background Fleurs d'oranger & chats errants">
+            <video id="videoBanner" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri() . './assets/images/banner.png'; ?>">
                 <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/header-video.mp4" type="video/mp4">
             </video>
-            <img id="header-logo" class="logo-animation parralax" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logobanner.png" alt="Logo">
+            <div class="logoContainer">
+            <img class="logoBanner logo-animation parralax" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logobanner.png" alt="Logo">
+            </div>
         </div>
         </section>
 
@@ -32,6 +35,8 @@ get_header();
             </article>
 
             <article id="place" class="fade-in-section fade-in-section-bottom"> 
+                <div>
+
                 <img id="NuagesBleu" src=<?php echo get_stylesheet_directory_uri() . '/assets/images/Nuages.png'; ?> alt="Nuages Bleu"
                     data-0="transform:translateX(0px);" 
                     data-3000="transform:translateX(-300px);">
