@@ -1,0 +1,85 @@
+/////////// Ajout de la vidéo et du logo dans le header
+  
+    // CSS de la banniére
+
+    .banner {
+
+        .backgroundBanner {
+            position: absolute;
+            width: 100% !important;
+            z-index: -2;
+            margin-top: 0px !important;
+        }
+    
+        .logoContainer {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: 10;
+      }
+      
+      .logoBanner {
+          width: 680.7px;
+          height: 479.04px;
+          animation: floatAnimation 3s infinite;
+          transform: translateY(0); //Réinitialise la translation Y pour éviter le décalage initial 
+      }
+      
+        
+        .videoBanner {
+            position: absolute;
+            z-index: -1;
+        }
+    }
+    
+    @media only screen and (max-width: 700px) {
+    
+      .header-content {
+        width: 100%;
+    
+        #videoBanner {
+            display: none;
+        }
+    
+        .backgroundBanner {
+          display: block;
+        }
+    
+        .logoBanner {
+          width: 100%;
+          height: 100%;
+        }
+    
+        .boutonMenu {
+            position: absolute; 
+            right: -100px; 
+            z-index: 10; 
+        }
+    
+        .story #place > div p {
+            padding-left: 0.5em;
+        }
+    
+        h2 {
+            font-size: 2rem;
+        }
+    
+        #oscar::after {
+            right: -30px;
+        }
+    
+        #oscar::before, #oscar::after {
+            width: 100px;
+            height: 100px;
+        } 
+    }}
+    
+      /////// Mise en place de l'animation de flottement sur le logo
+      @keyframes floatAnimation {
+        0% { transform: translate(2px, 2px); }
+        25% { transform: translate(3px, -2px); }
+        50% { transform: translate(1px, 3px); }
+        75% { transform: translate(-2px, 1px); }
+        100% { transform: translate(2px, 2px); }
+    }
+    

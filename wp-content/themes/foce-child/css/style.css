@@ -57,26 +57,6 @@
   animation: rotating 20s normal linear infinite;
 }
 
-.fade-in-title span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
-
-.fade-in-title .word1 {
-  transition-delay: 0s;
-}
-
-.fade-in-title .word2 {
-  transition-delay: 0.2s;
-}
-
-.fade-in-title.is-visible span {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .nomination_container {
   padding-top: 80px;
   display: flex;
@@ -232,64 +212,38 @@
   }
 }
 
-.slider-perso {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin: auto;
-  width: 100%;
-  max-width: 100%;
-}
-.slider-perso .swiper-slide {
-  background-position: center;
+.story #place {
+  position: relative;
+  background-image: url("../assets/images/nuages-background.png");
   background-size: cover;
-  margin-right: 40px;
-  margin-left: 40px;
-}
-.slider-perso .swiper-slide img {
-  display: block;
-  max-width: 400px;
-  width: 400px;
-  height: 400px;
-}
-.slider-perso #characters {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.swiper-slide {
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  margin-right: 40px;
-  margin-left: 40px;
+  overflow: hidden;
 }
 
-.swiper-slide img {
-  display: block;
-  max-width: 400px;
-  width: 400px;
-  height: 400px;
+#NuagesBleu {
+  max-height: 300px;
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  right: 0px;
+  height: auto;
+  transition: transform 0.5s ease-out;
 }
 
-#characters {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.title-left {
-  width: 100%;
-  padding: 1em 1em;
-  text-align: left;
-  background-position: left;
-}
-
-@media (min-width: 300px) and (max-width: 1000px) {
-  .slider-perso .swiper-slide img {
-    display: block;
-    max-width: 250px;
-    width: 250px;
-    height: 250px;
+@media (max-width: 700px) {
+  #NuagesBleu {
+    display: none;
+  }
+  h3 {
+    font-size: 25px;
+    padding: 1em 1em;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .swiper-slide img {
+    max-width: 30px;
   }
 }
 .main-navigation {
@@ -545,37 +499,63 @@
     margin-left: -10px;
   }
 }
-.story #place {
-  position: relative;
-  background-image: url("../assets/images/nuages-background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+.slider-perso {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+}
+.slider-perso .swiper-slide {
   background-position: center;
-  overflow: hidden;
+  background-size: cover;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+.slider-perso .swiper-slide img {
+  display: block;
+  max-width: 400px;
+  width: 400px;
+  height: 400px;
+}
+.slider-perso #characters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-#NuagesBleu {
-  max-height: 300px;
-  filter: blur(10px);
-  position: absolute;
-  top: 0;
-  right: 0px;
-  height: auto;
-  transition: transform 0.5s ease-out;
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
-@media (max-width: 700px) {
-  #NuagesBleu {
-    display: none;
-  }
-  h3 {
-    font-size: 25px;
-    padding: 1em 1em;
-  }
-  h2 {
-    font-size: 30px;
-  }
-  .swiper-slide img {
-    max-width: 30px;
+.swiper-slide img {
+  display: block;
+  max-width: 400px;
+  width: 400px;
+  height: 400px;
+}
+
+#characters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-left {
+  width: 100%;
+  padding: 1em 1em;
+  text-align: left;
+  background-position: left;
+}
+
+@media (min-width: 300px) and (max-width: 1000px) {
+  .slider-perso .swiper-slide img {
+    display: block;
+    max-width: 250px;
+    width: 250px;
+    height: 250px;
   }
 }/*# sourceMappingURL=style.css.map */
