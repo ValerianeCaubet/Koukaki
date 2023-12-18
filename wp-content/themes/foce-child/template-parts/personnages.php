@@ -1,5 +1,5 @@
 <div class="slider-perso">
-    <h3 class="fade-in-title title-left">
+    <h3 id="h3perso" class="fade-in-title title-left">
         <span class="word1">Les</span>
         <span class="word2">personnages</span>
     </h3>

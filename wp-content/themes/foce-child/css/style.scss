@@ -164,12 +164,7 @@
   
     // CSS de la banniére
 
-.banner img {
-	margin-top: unset;
-}
-
 .banner {
-    background-image: none;  // désactive l'image qui est appelée dans la classe banner du thème parent
 
     .backgroundBanner {
         position: absolute;
@@ -182,7 +177,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      z-index: 1;
+      z-index: 10;
   }
   
   .logoBanner {
@@ -200,18 +195,21 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .videoBanner {
+
+  .header-content {
+    width: 100%;
+
+    #videoBanner {
         display: none;
     }
-    
-    .backgroundBanner img {
-        margin-bottom: 430px;
-    }
-    
+
     .backgroundBanner {
-        margin-bottom: 430px;
-        width: 100%; 
-        height: auto;
+      display: block;
+    }
+
+    .logoBanner {
+      width: 100%;
+      height: 100%;
     }
 
     .boutonMenu {
@@ -236,7 +234,7 @@
         width: 100px;
         height: 100px;
     } 
-}
+}}
 
   /////// Mise en place de l'animation de flottement sur le logo
   @keyframes floatAnimation {
@@ -262,21 +260,42 @@
     margin-top: -10%;
 
     @media screen and (max-width: 700px) {
+      
       width: 70%;
       margin-top: -50%;
-    }
+    } 
   }
 }
 
 ///////////// Style du Slider de la section Les personnages 
 
 .slider-perso {
-  padding-left: 100px;
   padding-top: 50px;
   padding-bottom: 50px;
   margin: auto;
   width: 100%;
   max-width: 100%;
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    max-width: 400px;
+    width: 400px;
+    height: 400px;
+  }
+  
+  #characters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
 }
 
 .swiper-slide {
@@ -300,26 +319,19 @@
 }
 
 .title-left {
-    margin-right: 820px;
+    width: 100%; 
+    padding: 1em 1em;
+    text-align: left;
+    background-position: left;
 }
 
-// media queries
-@media (min-width: 700px) and (max-width: 1000px) {
-
-  #titreh3 {
-      margin-left: 0;
-    }
-
+@media (min-width: 300px) and (max-width: 1000px) {
+  .slider-perso .swiper-slide img {
+    display: block;
+    max-width: 250px;
+    width: 250px;
+    height: 250px;
 }
-@media (max-width: 700px) {
-  .swiper-slide img {
-      max-width: 140px;
-  }
-  #titreh3 {
-      width: 100%;
-      margin-left: 10px;
-      font-size: 2rem;
-  }
 }
 
 /////////// CSS du menu-Burger
@@ -412,7 +424,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 15px;
+    row-gap: 10px;
   }
 }
 
@@ -430,9 +442,9 @@
 	    li a {
 	        text-decoration: none !important;
 	        list-style-type: none !important;
-	        font-size: 3vw;
+	        font-size: 2.5vw;
 	        font-weight: bold;
-	        line-height: 104px;
+	        line-height: 85px;
 
 	        &:hover {
 	            filter: drop-shadow(0px 0px 5px #ff5c00);
@@ -448,6 +460,12 @@
 
 .menuParagraphe {
   text-align: center;
+}
+
+@media (min-width: 300px) and (max-width: 1000px) {
+  .liste li a {
+    line-height: 70px;
+  }
 }
 
 //////// Eléments dans le menu-Burger
@@ -469,21 +487,21 @@
 
  ////// Les cats 
 #catMenuBleu {
-  top: 260px;
+  top: 220px;
   left: 280px;
   width: 120px;
   height: 105px;
 }
 
 #catMenuBlack {
-  top: 480px;
+  top: 440px;
   right: 210px;
   width: 120px;
   height: 105px;
 }
 
 #catMenuOrange {
-  top: 600px;
+  top: 540px;
   left: 80px;
   width: 93px;
   height: 84px;
@@ -491,23 +509,23 @@
 
 ////// Les flowers
 #fleurMenuSunFlower {
-  top: 215px;
+  top: 200px;
   right: 210px;
 }
 
 #fleurMenuOrchid {
-  top: 117px;
+  top: 110px;
   left: -70px;
 }
 
 #fleurMenuHibiscus {
-  top: 540px;
+  top: 460px;
   margin-left: 1450px;
   width: 30%;
 }
 
 #fleurMenuRandom {
-  top: 300px;
+  top: 280px;
   margin-left: 1400px;
   width: 7%;
 }
@@ -535,22 +553,26 @@
 /////// media queries
 @media (min-width: 700px) and (max-width: 1000px) {
   #catMenuBleu {
-      left: 10%;
+      display: none;
   }
   #fleurMenuSunFlower {
-      right: 5%;
+    display: none;
   }
   #catMenuBlack {
-      right: 10%;
+    display: none;
   }
   #fleurMenuFlower {
-      left: 5%;
+    display: none;
   }
 }
 
 @media (max-width: 700px) {
   #catMenuOrange {
-      left: 0;
+      display: none;
+  }
+
+  .boutonMenu {
+    margin-right: 15px;
   }
 
   .main-navigation a {
@@ -558,7 +580,7 @@
   }
 
   .main-navigation ul {
-      justify-content: flex-start;
+      position: center;
   }
 
   .banner {
@@ -578,25 +600,23 @@
   }
 
   #catMenuBlack {
-      top: 440px;
-      right: 0;
+    display: none;
   }
 
   #fleurMenuFlower {
-      left: 5%;
+    display: none;
   }
 
   .liste li a {
-      font-size: 4.5vw;
+      font-size: 15px;
   }
 
   #fleurMenuSunFlower {
       display: none;
   }
 
-  ul,
-  ol {
-      margin: 0 0 1.5em -4em;
+  #fleurMenuOrchid {
+    display: none;
   }
 
   .menuParagraphe {
@@ -624,3 +644,26 @@
   height: auto;
   transition: transform 0.5s ease-out;
 } 
+
+// Media queries 
+
+@media (max-width: 700px){
+
+  #NuagesBleu {
+    display: none;
+  }
+  
+  h3 {
+      font-size: 25px;
+      padding: 1em 1em;
+  }
+
+  
+h2 {
+    font-size: 30px;
+}
+  
+    .swiper-slide img {
+        max-width: 30px;
+    }
+  }
