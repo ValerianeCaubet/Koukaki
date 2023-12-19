@@ -10,7 +10,6 @@ get_header();
             <video id="videoBanner" autoplay muted loop playsinline poster="<?php echo get_template_directory_uri() . './assets/images/banner.png'; ?>">
                 <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video/header-video.mp4" type="video/mp4">
             </video>
-            <img class="backgroundBanner" src="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="Background Fleurs d'oranger & chats errants">
             <div class="logoContainer">
             <img class="logoBanner logo-animation parralax" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logobanner.png" alt="Logo">
             </div>

@@ -1,4 +1,5 @@
-//////////////// Ajout de l'effet fade-in sur la page principale 
+/// Ajout de l'effet fade-in sur la page principale 
+
 @keyframes fadeInSlide {
     from {
         opacity: 0;
@@ -15,7 +16,8 @@
     animation: fadeInSlide 1s ease-in-out forwards;
   }
   
-  //////////// Ajout des effets de glissements aux differentes sections 
+/// Ajout des effets de glissements aux differentes sections 
+
   .fade-in-section-top {
     animation: fadeInSlide 1s ease-in-out forwards, slideInTop 1s ease-in-out forwards;
   }
@@ -44,4 +46,26 @@
         opacity: 1;
         transform: translateY(0);
     }
+  }
+
+/// Ajout de l'effet fade in sur mes titres 
+
+.fade-in-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  }
+  
+  .fade-in-title .word1 {
+    transition-delay: 0s;
+  }
+  
+  .fade-in-title .word2 {
+    transition-delay: 0.2s;
+  }
+  
+  .fade-in-title.is-visible span {
+    opacity: 1;
+    transform: translateY(0);
   }

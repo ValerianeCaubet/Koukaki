@@ -1,0 +1,248 @@
+.main-navigation {
+  height: 80px;
+}
+
+.main-navigation ul {
+  display: flex;
+}
+
+.site-title {
+  display: flex;
+  margin-left: 90px;
+}
+
+.MenuFull {
+  background-color: #FFF5E9;
+  opacity: 0;
+  transition: opacity 0.5s ease-in, height 0.5s ease-in;
+  overflow: hidden !important;
+}
+.MenuFull.nav_open {
+  opacity: 1;
+  height: 100vh;
+  visibility: visible;
+  display: block;
+  transition: opacity 0.5s ease-in, height 0.5s ease-in;
+  max-width: 1440px;
+  overflow: hidden !important;
+}
+
+.boutonMenu {
+  width: 42px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  margin-top: 30px;
+  margin-right: 120px;
+}
+.boutonMenu span {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.5s ease-in-out;
+}
+.boutonMenu span::before, .boutonMenu span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: transform 0.5s ease-in-out;
+}
+.boutonMenu span::after {
+  transform: translateY(10px);
+}
+.boutonMenu span::before {
+  transform: translateY(-10px);
+}
+.boutonMenu.active span {
+  background-color: transparent;
+}
+.boutonMenu.active span::before {
+  transform: translateY(0px) rotateZ(45deg);
+}
+.boutonMenu.active span::after {
+  transform: translateY(0px) rotateZ(-45deg);
+}
+
+.menu-items {
+  display: none;
+  background-color: #FFF5E9;
+}
+.menu-items__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.liste ul {
+  text-align: center;
+}
+.liste li {
+  text-align: center;
+  margin-right: 100px !important;
+  list-style-type: none;
+}
+.liste li a {
+  text-decoration: none !important;
+  list-style-type: none !important;
+  font-size: 2.5vw;
+  font-weight: bold;
+  line-height: 85px;
+}
+.liste li a:hover {
+  filter: drop-shadow(0px 0px 5px #ff5c00);
+  -webkit-filter: drop;
+}
+.liste img {
+  margin: auto;
+  display: flex;
+}
+
+.menuParagraphe {
+  text-align: center;
+}
+
+@media (min-width: 300px) and (max-width: 1000px) {
+  .liste li a {
+    line-height: 70px;
+  }
+}
+#catMenuBleu,
+#catMenuBlack,
+#catMenuOrange,
+#fleurMenuSunFlower,
+#fleurMenuOrchid,
+#fleurMenuHibiscus,
+#fleurMenuRandom,
+#fleurMenuFlower {
+  position: absolute;
+}
+
+.logoMenu {
+  width: 200px;
+  margin: auto;
+}
+
+#catMenuBleu {
+  top: 220px;
+  left: 280px;
+  width: 120px;
+  height: 105px;
+}
+
+#catMenuBlack {
+  top: 440px;
+  right: 210px;
+  width: 120px;
+  height: 105px;
+}
+
+#catMenuOrange {
+  top: 540px;
+  left: 80px;
+  width: 93px;
+  height: 84px;
+}
+
+#fleurMenuSunFlower {
+  top: 200px;
+  right: 210px;
+}
+
+#fleurMenuOrchid {
+  top: 110px;
+  left: -70px;
+}
+
+#fleurMenuHibiscus {
+  top: 460px;
+  margin-left: 1450px;
+  width: 30%;
+}
+
+#fleurMenuRandom {
+  top: 280px;
+  margin-left: 1400px;
+  width: 7%;
+}
+
+#fleurMenuFlower {
+  top: 480px;
+  left: 230px;
+  width: 80px;
+  height: 80px;
+}
+
+#catMenuBlack,
+#catMenuOrange,
+#catMenuBleu {
+  animation: floatAnimation 8s infinite alternate;
+}
+
+#fleurMenuFlower,
+#fleurMenuSunFlower, #fleurMenuHibiscus, #fleurMenuRandom, #fleurMenuOrchid {
+  animation: rotating 20s normal linear infinite;
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+  #catMenuBleu {
+    display: none;
+  }
+  #fleurMenuSunFlower {
+    display: none;
+  }
+  #catMenuBlack {
+    display: none;
+  }
+  #fleurMenuFlower {
+    display: none;
+  }
+  #catMenuOrange {
+    display: none;
+  }
+  .boutonMenu {
+    margin-right: 15px;
+  }
+  .main-navigation a {
+    font-size: 14px;
+  }
+  .main-navigation ul {
+    position: center;
+  }
+  .banner .backgroundBanner {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    top: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #catMenuBleu {
+    display: none;
+  }
+  #catMenuBlack {
+    display: none;
+  }
+  #fleurMenuFlower {
+    display: none;
+  }
+  .liste li a {
+    font-size: 15px;
+  }
+  #fleurMenuSunFlower {
+    display: none;
+  }
+  #fleurMenuOrchid {
+    display: none;
+  }
+  .menuParagraphe {
+    margin-left: -10px;
+  }
+}/*# sourceMappingURL=menuburger.css.map */

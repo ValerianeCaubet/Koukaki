@@ -41,6 +41,26 @@
     transform: translateY(0);
   }
 }
+.fade-in-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.fade-in-title .word1 {
+  transition-delay: 0s;
+}
+
+.fade-in-title .word2 {
+  transition-delay: 0.2s;
+}
+
+.fade-in-title.is-visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes rotating {
   100% {
     transform: rotate(1turn);
@@ -124,79 +144,6 @@
     padding-bottom: 0;
   }
 }
-.banner .backgroundBanner {
-  position: absolute;
-  width: 100% !important;
-  z-index: -2;
-  margin-top: 0px !important;
-}
-.banner .logoContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 10;
-}
-.banner .logoBanner {
-  width: 680.7px;
-  height: 479.04px;
-  animation: floatAnimation 3s infinite;
-  transform: translateY(0);
-}
-.banner .videoBanner {
-  position: absolute;
-  z-index: -1;
-}
-
-@media only screen and (max-width: 700px) {
-  .header-content {
-    width: 100%;
-  }
-  .header-content #videoBanner {
-    display: none;
-  }
-  .header-content .backgroundBanner {
-    display: block;
-  }
-  .header-content .logoBanner {
-    width: 100%;
-    height: 100%;
-  }
-  .header-content .boutonMenu {
-    position: absolute;
-    right: -100px;
-    z-index: 10;
-  }
-  .header-content .story #place > div p {
-    padding-left: 0.5em;
-  }
-  .header-content h2 {
-    font-size: 2rem;
-  }
-  .header-content #oscar::after {
-    right: -30px;
-  }
-  .header-content #oscar::before, .header-content #oscar::after {
-    width: 100px;
-    height: 100px;
-  }
-}
-@keyframes floatAnimation {
-  0% {
-    transform: translate(2px, 2px);
-  }
-  25% {
-    transform: translate(3px, -2px);
-  }
-  50% {
-    transform: translate(1px, 3px);
-  }
-  75% {
-    transform: translate(-2px, 1px);
-  }
-  100% {
-    transform: translate(2px, 2px);
-  }
-}
 .banner img {
   width: 100%;
   margin-top: 0;
@@ -204,6 +151,7 @@
 .banner .parallax {
   width: 50%;
   margin-top: -10%;
+  transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 700px) {
   .banner .parallax {
@@ -219,6 +167,9 @@
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
+}
+.story #place div p {
+  padding-left: initial;
 }
 
 #NuagesBleu {
@@ -240,7 +191,7 @@
     padding: 1em 1em;
   }
   h2 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .swiper-slide img {
     max-width: 30px;
@@ -452,8 +403,6 @@
   #fleurMenuFlower {
     display: none;
   }
-}
-@media (max-width: 700px) {
   #catMenuOrange {
     display: none;
   }
@@ -557,5 +506,78 @@
     max-width: 250px;
     width: 250px;
     height: 250px;
+  }
+}
+.banner .backgroundBanner {
+  position: absolute;
+  width: 100% !important;
+  z-index: -2;
+  margin-top: 0px !important;
+}
+.banner .logoContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+}
+.banner .logoBanner {
+  width: 680.7px;
+  height: 479.04px;
+  animation: floatAnimation 3s infinite;
+  transform: translate(-50%, -50%);
+}
+.banner .videoBanner {
+  position: absolute;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 700px) {
+  .header-content {
+    width: 100%;
+  }
+  .header-content #videoBanner {
+    display: none;
+  }
+  .header-content .backgroundBanner {
+    display: block;
+  }
+  .header-content .logoBanner {
+    width: 100%;
+    height: 100%;
+  }
+  .header-content .boutonMenu {
+    position: absolute;
+    right: -100px;
+    z-index: 10;
+  }
+  .header-content .story #place > div p {
+    padding-left: 0.5em;
+  }
+  .header-content h2 {
+    font-size: 2rem;
+  }
+  .header-content #oscar::after {
+    right: -30px;
+  }
+  .header-content #oscar::before, .header-content #oscar::after {
+    width: 100px;
+    height: 100px;
+  }
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translate(2px, 2px);
+  }
+  25% {
+    transform: translate(3px, -2px);
+  }
+  50% {
+    transform: translate(1px, 3px);
+  }
+  75% {
+    transform: translate(-2px, 1px);
+  }
+  100% {
+    transform: translate(2px, 2px);
   }
 }/*# sourceMappingURL=style.css.map */

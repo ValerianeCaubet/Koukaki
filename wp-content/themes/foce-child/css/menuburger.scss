@@ -132,7 +132,7 @@
   }
 }
 
-//////// Eléments dans le menu-Burger
+/// Eléments dans le menu-Burger
 	#catMenuBleu,
 	#catMenuBlack,
 	#catMenuOrange,
@@ -201,20 +201,21 @@
   height: 80px;
 }
 
-//////// FloatCat
+/// Chat qui flotte 
+
 #catMenuBlack,
 #catMenuOrange,
 #catMenuBleu {
   animation: floatAnimation 8s infinite alternate;
 }
 
-////// RotationFlowers
+/// Fleurs qui tournent 
 #fleurMenuFlower,
 #fleurMenuSunFlower, #fleurMenuHibiscus, #fleurMenuRandom, #fleurMenuOrchid  {
   animation: rotating 20s normal linear infinite;
 }
 
-/////// media queries
+/////// RESPONSIVE
 @media (min-width: 700px) and (max-width: 1000px) {
   #catMenuBleu {
       display: none;
@@ -228,9 +229,7 @@
   #fleurMenuFlower {
     display: none;
   }
-}
 
-@media (max-width: 700px) {
   #catMenuOrange {
       display: none;
   }
@@ -245,10 +244,6 @@
 
   .main-navigation ul {
       position: center;
-  }
-
-  .banner {
-      min-height: 100vh;
   }
 
   .banner .backgroundBanner {

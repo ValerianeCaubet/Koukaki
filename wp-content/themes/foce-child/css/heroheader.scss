@@ -1,4 +1,4 @@
-/////////// Ajout de la vidéo et du logo dans le header
+/// Ajout de la vidéo et du logo dans le header
   
     // CSS de la banniére
 
@@ -22,7 +22,7 @@
           width: 680.7px;
           height: 479.04px;
           animation: floatAnimation 3s infinite;
-          transform: translateY(0); //Réinitialise la translation Y pour éviter le décalage initial 
+          transform: translate(-50%, -50%);
       }
       
         
@@ -74,12 +74,12 @@
         } 
     }}
     
-      /////// Mise en place de l'animation de flottement sur le logo
-      @keyframes floatAnimation {
-        0% { transform: translate(2px, 2px); }
-        25% { transform: translate(3px, -2px); }
-        50% { transform: translate(1px, 3px); }
-        75% { transform: translate(-2px, 1px); }
-        100% { transform: translate(2px, 2px); }
+/// Mise en place de l'animation de flottement sur le logo
+    @keyframes floatAnimation {
+     0% { transform: translate(2px, 2px); }
+     25% { transform: translate(3px, -2px); }
+     50% { transform: translate(1px, 3px); }
+     75% { transform: translate(-2px, 1px); }
+     100% { transform: translate(2px, 2px); }
     }
-    
+        
